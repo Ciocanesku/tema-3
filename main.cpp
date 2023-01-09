@@ -52,7 +52,7 @@ public:
     ///---------------GET-SET----------------------
     int getID() const
     {
-        return id.id;
+        return id.id;s
     }
     void setSeats(const int nr)
     {

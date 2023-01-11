@@ -272,6 +272,8 @@ public:
     };
 };
 
+
+
 class Garage
 {
     int carnr;
@@ -309,7 +311,6 @@ template<class T1, class T2>
 void getMax(T1 a,T2 b)
 {
 
-    cout<<endl<<"Are portbagajul mai mare masina:"<<endl;
     if(a>b)
     {
         cout<<a;
@@ -317,6 +318,19 @@ void getMax(T1 a,T2 b)
     else
         cout<<b;
 }
+template<>
+void getMax(shared_ptr<Car> a,shared_ptr<Car> b)
+{
+
+    cout<<endl<<"Are portbagajul mai mare:"<<endl;
+    if(*a>*b)
+    {
+        cout<<*a;
+    }
+    else
+        cout<<*b;
+}
+
 
 int main() {
 
@@ -404,7 +418,7 @@ catch (const eroare& err)
                 cin>>s2;
                 cout<<"-----------------------------------------------------------"<<endl;
                 g.findcar(s2);
-                getMax(*g.findcar(s1),*g.findcar(s2));
+                getMax(g.findcar(s1),g.findcar(s2));
             }
             catch(const eroare& err)
             {
